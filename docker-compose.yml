@@ -1,0 +1,45 @@
+services:
+  mend-ai-bridge:
+    build: .
+    container_name: mend-ai-bridge
+    ports:
+      - "8000:8000"
+    
+    # Automatically load environment variables from .env file
+    env_file:
+      - .env
+    
+    # Mount adapter and config for live development
+    #volumes:
+    #  - ./adapter.py:/app/adapter.py
+    #  - ./config.yml:/app/config.yml
+    
+    # Restart policy for production reliability
+    restart: unless-stopped
+    
+    # Health check configuration
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    
+    # Resource limits (optional - uncomment for production)
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '1.0'
+    #       memory: 512M
+    #     reservations:
+    #       cpus: '0.5'
+    #       memory: 256M
+
+# For production scaling (uncomment if needed):
+# networks:
+#   default:
+#     name: mend-ai-bridge-network
+
+# For persistent data (uncomment if needed):
+# volumes:
+#   bridge_data: 

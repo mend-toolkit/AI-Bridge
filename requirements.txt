@@ -1,0 +1,30 @@
+# Core FastAPI dependencies
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+
+# HTTP client for API requests
+requests>=2.31.0
+
+# YAML configuration support
+PyYAML>=6.0.1
+
+# Data validation
+pydantic>=2.5.0
+
+# Optional: For enhanced logging (uncomment if needed)
+# structlog>=23.2.0
+
+# Optional: For async HTTP requests (uncomment if needed)
+# httpx>=0.25.0
+# aiohttp>=3.9.0
+
+# Optional: For more advanced session management (uncomment if needed)
+# redis>=5.0.0
+
+# Optional: For database session storage (uncomment if needed)
+# sqlalchemy>=2.0.0
+# databases[sqlite]>=0.8.0
+
+# AWS SDK for Amazon Bedrock integration (uncomment if using Bedrock)
+boto3>=1.34.0
+botocore>=1.34.0 
