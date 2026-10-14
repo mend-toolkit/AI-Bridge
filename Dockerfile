@@ -1,5 +1,5 @@
 # Mend AI Red Teaming Bridge - Docker Image
-FROM python:3.11-alpine
+FROM python:3.15-alpine
 
 # Set working directory
 WORKDIR /app
